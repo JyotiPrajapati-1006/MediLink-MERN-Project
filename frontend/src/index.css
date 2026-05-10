@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: hsl(var(--primary)); /* Primary color */
+  --color-primary-dark: hsl(
+    var(--primary-dark)
+  ); /* Darker shade of primary color */
+  --color-secondary-dark: hsl(
+    var(--secondary-dark)
+  ); /* Darker shade of secondary color */
+  --color-text-primary: hsl(
+    var(--text-primary)
+  ); /* Text color for primary content */
+  --color-text-secondary: hsl(
+    var(--text-secondary)
+  ); /* Text color for secondary content */
+}
+
+@layer base {
+  :root {
+    --primary: 222 83% 50%; /* HEX: #2563EB */
+    --primary-dark: 0 0% 100%; /* HEX: #111827 */
+    --secondary-dark: 220 15% 95%; /* HEX: #1F2937 */
+    --text-primary: 220 20% 15%; /* HEX: #F3F4F6 */
+    --text-secondary: 218 10% 45%; /* HEX: #9CA3AF */
+  }
+  .dark {
+    --primary: 222 83% 53%;
+    --primary-dark: 221 39% 11%;
+    --secondary-dark: 218 28% 17%;
+    --text-primary: 220 29% 96%;
+    --text-secondary: 217 12% 65%;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900;
+    font-family: "Inter", sans-serif; /* A modern, clean font */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* 3. (Optional) Add custom component classes. */
+@layer components {
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
+  }
+}
